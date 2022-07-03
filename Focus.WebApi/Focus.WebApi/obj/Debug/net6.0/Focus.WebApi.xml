@@ -47,12 +47,5 @@
             </summary>
             <param name="logger"></param>
         </member>
-        <member name="M:Focus.WebApi.Filters.CustomerExceptionFilter.QueryString(Microsoft.AspNetCore.Http.HttpRequest)">
-            <summary>
-             根据请求信息返回请求串
-            </summary>
-            <param name="request">请求信息</param>
-            <returns>请求串</returns>
-        </member>
     </members>
 </doc>

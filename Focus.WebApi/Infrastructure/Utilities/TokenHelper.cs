@@ -72,6 +72,7 @@ namespace Infrastructure.Utilities
                     new Claim("platform", ((int)userToken.Platform).ToString()),
                     new Claim("channel", userToken.Channel??""),
                     new Claim("ip", userToken.IP??""),
+                    new Claim(ClaimTypes.Role, "Administrator")
                 };
 
             // 创建一个密钥(对称密钥)

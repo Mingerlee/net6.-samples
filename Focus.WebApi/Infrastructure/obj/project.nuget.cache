@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y4VK9cAumRlZhzCqcB13rZU5c141ebusYygNtBqRnWXfpGn4MmOlYhTJMVZ0OVOPwVDLEpX7QIJRNGkspDhKwA==",
+  "dgSpecHash": "RWo5uavNACxcpuiKLS47OXzSLLwoptKeExUM26aTs7xjMK93r/04XB0iWhZ7Fa32u5ikdDuJ5E+QQOE/ik+vAQ==",
   "success": true,
-  "projectFilePath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minge\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",

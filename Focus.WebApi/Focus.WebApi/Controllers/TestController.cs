@@ -38,7 +38,7 @@ namespace Focus.WebApi.Controllers
         public IActionResult Test() => new JsonResult("Testting......");
 
         [HttpPost, Route("W102"), AllowAnonymous]
-        public IActionResult Login(SysUser user)
+        public IActionResult Login()
         {
             AddAuthorization();
             var s = new ResultModel<string>("Success");
@@ -70,6 +70,18 @@ namespace Focus.WebApi.Controllers
             //var s = Guid.NewGuid().GetNextGuid();
             return Ok(new ResultModel<SysUser>(await _userService.GetSysUsers(id)));
         }
+        [HttpGet, Route("W106"), AuthorizeRoles("Administrator")]
+        public IActionResult TestAuthorizeRoles()
+        {
+            return Ok("Success");
+        }
+        [HttpGet, Route("W107"), AuthorizeRoles("Public")]
+        public IActionResult TestAuthorizeRoles1()
+        {
+            return Ok("Success");
+        }
+
+
         private void AddAuthorization()
         {
             var userToken = new UserToken

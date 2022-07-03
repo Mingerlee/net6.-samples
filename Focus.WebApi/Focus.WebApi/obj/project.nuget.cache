@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N4a6jTEQBafCYNihPKAraJ4xIk6VcuiPaHaSQnIrZbl3B1ed9eu/ttPC92RwnkVBui3q4UkZO0teLKcWC+6ixg==",
+  "dgSpecHash": "lxK/2ZOr3mT5ftJdp3gGuy0cdoeSurX78s1kautrOnTUkRoUHFIPPXhfeOOxyll12w4ZjujRd6tzi7MvcZpOkQ==",
   "success": true,
-  "projectFilePath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj",
+  "projectFilePath": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minge\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
