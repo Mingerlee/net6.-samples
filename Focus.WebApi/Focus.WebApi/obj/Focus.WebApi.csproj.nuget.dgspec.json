@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj": {}
+    "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj": {}
   },
   "projects": {
-    "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj": {
+    "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj",
+        "projectUniqueName": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj",
         "projectName": "Focus.Repository",
-        "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj",
+        "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj",
         "packagesPath": "C:\\Users\\minge\\.nuget\\packages\\",
-        "outputPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Repository\\obj\\",
+        "outputPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\minge\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj"
+              "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj": {
+    "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
+        "projectUniqueName": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
         "projectName": "Focus.Service",
-        "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
+        "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
         "packagesPath": "C:\\Users\\minge\\.nuget\\packages\\",
-        "outputPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Service\\obj\\",
+        "outputPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\minge\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -106,11 +106,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj": {
-                "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj"
+              "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj": {
+                "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj"
               },
-              "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj"
+              "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -149,14 +149,14 @@
         }
       }
     },
-    "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj": {
+    "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj",
+        "projectUniqueName": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj",
         "projectName": "Focus.WebApi",
-        "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj",
+        "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj",
         "packagesPath": "C:\\Users\\minge\\.nuget\\packages\\",
-        "outputPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.WebApi\\obj\\",
+        "outputPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\minge\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -174,11 +174,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj": {
-                "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj"
+              "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj": {
+                "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj"
               },
-              "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj"
+              "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -232,14 +232,14 @@
         }
       }
     },
-    "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\minge\\.nuget\\packages\\",
-        "outputPath": "D:\\oym\\Project\\Focus\\Focus.WebApi\\Infrastructure\\obj\\",
+        "outputPath": "D:\\oym\\net6.-samples\\Focus.WebApi\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\minge\\AppData\\Roaming\\NuGet\\NuGet.Config",
