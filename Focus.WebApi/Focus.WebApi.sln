@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Focus.WebApi", "Focus.WebApi\Focus.WebApi.csproj", "{F6B8BF5A-57F6-4990-A04C-B52D80F97550}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "基础设施", "基础设施", "{253B6998-3467-4B56-9723-DD323C05F501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{D45290ED-42C5-40E7-A663-D241F64EE65E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "业务层", "业务层", "{79C1C63F-4946-43CA-8EB5-1578A5001C52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Focus.Service", "Focus.Service\Focus.Service.csproj", "{B00E4209-D250-48A6-BEB6-398DB815FD58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据层", "数据层", "{FF0E6CE1-29E6-42D5-ABB5-82D469289F87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Focus.Repository", "Focus.Repository\Focus.Repository.csproj", "{EC1DD2F4-F267-4438-9732-817EE9427359}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6B8BF5A-57F6-4990-A04C-B52D80F97550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B8BF5A-57F6-4990-A04C-B52D80F97550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6B8BF5A-57F6-4990-A04C-B52D80F97550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6B8BF5A-57F6-4990-A04C-B52D80F97550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45290ED-42C5-40E7-A663-D241F64EE65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45290ED-42C5-40E7-A663-D241F64EE65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45290ED-42C5-40E7-A663-D241F64EE65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45290ED-42C5-40E7-A663-D241F64EE65E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00E4209-D250-48A6-BEB6-398DB815FD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00E4209-D250-48A6-BEB6-398DB815FD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00E4209-D250-48A6-BEB6-398DB815FD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00E4209-D250-48A6-BEB6-398DB815FD58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1DD2F4-F267-4438-9732-817EE9427359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1DD2F4-F267-4438-9732-817EE9427359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1DD2F4-F267-4438-9732-817EE9427359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1DD2F4-F267-4438-9732-817EE9427359}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D45290ED-42C5-40E7-A663-D241F64EE65E} = {253B6998-3467-4B56-9723-DD323C05F501}
+		{B00E4209-D250-48A6-BEB6-398DB815FD58} = {79C1C63F-4946-43CA-8EB5-1578A5001C52}
+		{EC1DD2F4-F267-4438-9732-817EE9427359} = {FF0E6CE1-29E6-42D5-ABB5-82D469289F87}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09C55CDF-0F98-4385-A8A8-3AC6CC4A2460}
+	EndGlobalSection
+EndGlobal

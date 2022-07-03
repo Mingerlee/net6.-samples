@@ -1,0 +1,25 @@
+2022-06-30 19:41:05 ERROR  测试日志记录  <Execute>d__0.MoveNext => <no type>.lambda_method462 => TestController.Get
+2022-06-30 19:43:59 | ERROR  测试日志记录  <Execute>d__0.MoveNext => <no type>.lambda_method462 => TestController.Get
+2022-06-30 19:45:00 | ERROR |  | /r/n 测试日志记录  <Execute>d__0.MoveNext => <no type>.lambda_method462 => TestController.Get
+2022-06-30 20:00:28 | ERROR |  | An unhandled exception has occurred while executing the request. |  | AsyncMethodBuilderCore.Start => <Invoke>d__9.MoveNext => DiagnosticsLoggerExtensions.UnhandledException
+2022-06-30 20:01:00 | ERROR |  | Attempted to divide by zero. |  | ResourceInvoker.InvokeFilterPipelineAsync => ResourceInvoker.Next => CustomerExceptionFilter.OnExceptionAsync
+2022-06-30 20:05:46 | ERROR |  | Attempted to divide by zero. |  | ResourceInvoker.InvokeFilterPipelineAsync => ResourceInvoker.Next => CustomerExceptionFilter.OnExceptionAsync
+2022-06-30 20:12:55 | ERROR |  | Path:/api/Test/W103,输入参数:?id=1,IP:localhost:7166--->2022 - 06 - 30 20: 12: 55——System.DivideByZeroException：Attempted to divide by zero.——异常堆栈信息：   at Focus.WebApi.Controllers.TestController.Get(Int32 id) in D:\oym\Project\Focus\Focus.WebApi\Focus.WebApi\Controllers\TestController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) |  | ResourceInvoker.InvokeFilterPipelineAsync => ResourceInvoker.Next => CustomerExceptionFilter.OnExceptionAsync
+2022-06-30 20:20:34 | ERROR |  | An unhandled exception has occurred while executing the request. |  | AsyncMethodBuilderCore.Start => <Invoke>d__9.MoveNext => DiagnosticsLoggerExtensions.UnhandledException
+2022-06-30 20:50:45 | ERROR |  | Path:/api/Test/W103,输入参数:?id=1,IP:localhost:7166-->System.DivideByZeroException：Attempted to divide by zero.——异常堆栈信息：   at Focus.WebApi.Controllers.TestController.Get(Int32 id) in D:\oym\Project\Focus\Focus.WebApi\Focus.WebApi\Controllers\TestController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) |  | ResourceInvoker.InvokeFilterPipelineAsync => ResourceInvoker.Next => CustomerExceptionFilter.OnExceptionAsync

@@ -1,0 +1,15 @@
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\bin\Debug\net6.0\Focus.Repository.deps.json
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\bin\Debug\net6.0\Focus.Repository.dll
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\bin\Debug\net6.0\Focus.Repository.pdb
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\bin\Debug\net6.0\Infrastructure.dll
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\bin\Debug\net6.0\Infrastructure.pdb
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\Focus.Repository.csproj.AssemblyReference.cache
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\Focus.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\Focus.Repository.AssemblyInfoInputs.cache
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\Focus.Repository.AssemblyInfo.cs
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\Focus.Repository.csproj.CoreCompileInputs.cache
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\Focus.Repository.csproj.CopyComplete
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\Focus.Repository.dll
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\refint\Focus.Repository.dll
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\Focus.Repository.pdb
+D:\oym\Project\Focus\Focus.WebApi\Focus.Repository\obj\Debug\net6.0\ref\Focus.Repository.dll
