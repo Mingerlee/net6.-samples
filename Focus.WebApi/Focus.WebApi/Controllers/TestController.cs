@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
-using Focus.Service.IServices;
+using Focus.IService;
 using Focus.Repository.Models.DbEntitys;
 using Focus.Repository.DBContext;
 using Focus.WebApi.Attributes;
@@ -86,8 +86,8 @@ namespace Focus.WebApi.Controllers
         {
             var userToken = new UserToken
             {
-                IP = Infrastructure.Utilities.HttpContext.GetIp,
-                IMEI = "",
+                IP = this.GetClientIP(),
+                IMEI = this.GetIMEI(),
                 Channel = "",
                 Version = "v1",
                 UID ="1",
@@ -97,7 +97,7 @@ namespace Focus.WebApi.Controllers
                 Mobile = "15289890000",
                 MobileArea = "86",
                 Account = 1,
-            };
+            }; 
 
             string token = userToken.Serialization(_tokenManagement);
             HttpContext.Response.Headers.Add("Authorization", new StringValues(token));

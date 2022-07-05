@@ -1,5 +1,5 @@
 ﻿using Focus.Repository.Models.DbEntitys;
-using Focus.Service.IServices;
+using Focus.IService;
 using Infrastructur.AutofacManager;
 using Focus.Repository.DBContext;
 using Focus.Service.ValidationModels;
@@ -8,7 +8,7 @@ using Infrastructure.Models;
 using Infrastructure.Enums;
 using Infrastructure.CacheManager;
 
-namespace Focus.Service.Services
+namespace Focus.Service
 {
     //
     public class SysUserService : IDependency, ISysUserService

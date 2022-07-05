@@ -1,16 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "lxK/2ZOr3mT5ftJdp3gGuy0cdoeSurX78s1kautrOnTUkRoUHFIPPXhfeOOxyll12w4ZjujRd6tzi7MvcZpOkQ==",
+  "dgSpecHash": "fVwx58T74jlV7NxmJr639J07NrFIwq1x1XKAXr7sfmJZdIiyJdfsU7lkIRD6ZPFue4inJQhzhm9Mjzi3m1fnpw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj",
+  "projectFilePath": "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.WebApi\\Focus.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minge\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
-    "C:\\Users\\minge\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
-    "C:\\Users\\minge\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.1.1\\fluentvalidation.aspnetcore.11.1.1.nupkg.sha512",
-    "C:\\Users\\minge\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.1.0\\fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

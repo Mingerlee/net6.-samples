@@ -1914,6 +1914,20 @@
           }
         }
       },
+      "Focus.IService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Focus.Repository": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Focus.IService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Focus.IService.dll": {}
+        }
+      },
       "Focus.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -6219,6 +6233,11 @@
         "version.txt"
       ]
     },
+    "Focus.IService/1.0.0": {
+      "type": "project",
+      "path": "../Focus.IService/Focus.IService.csproj",
+      "msbuildProject": "../Focus.IService/Focus.IService.csproj"
+    },
     "Focus.Repository/1.0.0": {
       "type": "project",
       "path": "../Focus.Repository/Focus.Repository.csproj",
@@ -6233,6 +6252,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "FluentValidation.AspNetCore >= 11.1.1",
+      "Focus.IService >= 1.0.0",
       "Focus.Repository >= 1.0.0",
       "Infrastructure >= 1.0.0"
     ]
@@ -6243,11 +6263,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
+      "projectUniqueName": "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
       "projectName": "Focus.Service",
-      "projectPath": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
+      "projectPath": "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
       "packagesPath": "C:\\Users\\minge\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Focus.Service\\obj\\",
+      "outputPath": "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\minge\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6258,17 +6278,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://192.168.20.19:5050/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Projects\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj": {
-              "projectPath": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj"
+            "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.IService\\Focus.IService.csproj": {
+              "projectPath": "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.IService\\Focus.IService.csproj"
             },
-            "D:\\Projects\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj"
+            "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj": {
+              "projectPath": "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.Repository\\Focus.Repository.csproj"
+            },
+            "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

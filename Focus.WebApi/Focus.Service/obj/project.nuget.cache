@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D2aL1D3VJrAVRWaqKMrsV7MXyklx3oIjz04O7kpjto03lvb+wVwGTM3jHIKpJ9dE6TQmu6PtKqNAIz7x68KTJQ==",
+  "dgSpecHash": "HP0b3kPi+AJKtZooGgWJwCb7EADoMGH+xhdfpXU7QyjoictGkzHYGBEu4hSVnhRhM+J0YLov3hPzc45tVMJp0Q==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
+  "projectFilePath": "D:\\oym\\NET6-GitHup\\net6.-samples\\Focus.WebApi\\Focus.Service\\Focus.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minge\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
     "C:\\Users\\minge\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",

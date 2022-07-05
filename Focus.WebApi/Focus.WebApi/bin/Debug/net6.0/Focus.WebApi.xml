@@ -33,7 +33,7 @@
             </summary>
             <param name="app"></param>
         </member>
-        <member name="M:Focus.WebApi.Controllers.TestController.#ctor(Microsoft.Extensions.Logging.ILogger{Focus.WebApi.Controllers.TestController},Microsoft.Extensions.Options.IOptions{Infrastructure.Config.TokenManagement},Focus.Service.IServices.ISysUserService)">
+        <member name="M:Focus.WebApi.Controllers.TestController.#ctor(Microsoft.Extensions.Logging.ILogger{Focus.WebApi.Controllers.TestController},Microsoft.Extensions.Options.IOptions{Infrastructure.Config.TokenManagement},Focus.IService.ISysUserService)">
             <summary>
             
             </summary>
