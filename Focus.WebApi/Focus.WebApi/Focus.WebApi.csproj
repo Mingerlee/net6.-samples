@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Focus.IService\Focus.IService.csproj" />
+    <ProjectReference Include="..\Focus.Service\Focus.Service.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 

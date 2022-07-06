@@ -10,10 +10,10 @@ namespace Focus.IService
 {
     public interface ISysUserService
     {
-        public Task<SysUser> GetSysUser(int id);
-        public Task<SysUser> GetSysUsers(int id);
-        public SysUser GetSysUserById(int id);
-        public Task<ResultModel<SysUser>> GetSysUser(SysUser sysUser);
+        Task<SysUser> GetSysUser(int id);
+        Task<SysUser> GetSysUsers(int id);
+        SysUser GetSysUserById(int id);
+        Task<ResultModel<SysUser>> GetSysUser(SysUser sysUser);
 
     }
 }

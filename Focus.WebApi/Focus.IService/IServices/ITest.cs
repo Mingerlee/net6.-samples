@@ -8,6 +8,6 @@ namespace Focus.IService
 {
     public interface ITest
     {
-        public void Get();
+        void Get();
     }
 }
