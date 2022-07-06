@@ -7,15 +7,15 @@
 软件架构说明
 
 #### 代码内容
-1、Net6基本框架
-2、JWT建权授权示例
-3、Autofac示例
-4、Dapper及MiniProfiler监控dapper执行语句（DbHelper通过依赖注入的监控不到）
-5、Nlog错误日志记录
-6、FluentValidation 实体字段非空等验证
-7、本地缓存MemoryCache基本使用
-8、邮件发送
-9、短信发送（暂未实现）
+1.  Net6基本框架
+2.  JWT建权授权示例
+3.  Autofac示例
+4.  Dapper及MiniProfiler监控dapper执行语句（DbHelper通过依赖注入的监控不到）
+5.  Nlog错误日志记录
+6.  FluentValidation 实体字段非空等验证
+7.  本地缓存MemoryCache基本使用
+8.  邮件发送
+9.  短信发送（暂未实现）
 
 #### 安装教程
 
