@@ -33,6 +33,13 @@
             </summary>
             <param name="app"></param>
         </member>
+        <member name="M:Focus.WebApi.Controllers.EMailController.SendEmail(Infrastructure.Models.MailContent)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="mail"></param>
+            <returns></returns>
+        </member>
         <member name="M:Focus.WebApi.Controllers.TestController.#ctor(Microsoft.Extensions.Logging.ILogger{Focus.WebApi.Controllers.TestController},Microsoft.Extensions.Options.IOptions{Infrastructure.Config.TokenManagement},Focus.IService.ISysUserService)">
             <summary>
             

@@ -60,7 +60,7 @@ namespace Focus.WebApi.Filters
                 {
                     //记录日志,写入DB SysSqlLog表
                     //Console.WriteLine($"执行时间：{execTime}(ms)  执行的SQL语句：{ActionSqlString}");
-                    SysSqlLogManager.WriteSqlLog(ActionSqlString, execTime);
+                    SysLogSQLManager.WriteSqlLog(ActionSqlString, execTime);
                 }
             }
         }

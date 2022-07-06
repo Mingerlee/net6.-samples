@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Focus.Repository.DBManager
 {
-    public class SysSqlLogManager
+    public class SysLogSQLManager
     {
         public static void WriteSqlLog(string content,decimal exectime)
         {
