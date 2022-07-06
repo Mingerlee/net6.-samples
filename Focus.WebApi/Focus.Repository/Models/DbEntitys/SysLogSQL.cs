@@ -6,7 +6,7 @@ namespace Focus.Repository.Models.DbEntitys
     /// 系统SQL日志表
     /// </summary>
     [Table("SysSqlLog")]
-    public class SysSqlLog: BaseEntity
+    public class SysLogSQL: BaseEntity
     {
         /// <summary>
         /// 日志编号

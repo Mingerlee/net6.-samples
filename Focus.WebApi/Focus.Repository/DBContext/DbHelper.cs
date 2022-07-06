@@ -13,7 +13,6 @@ using System.Reflection;
 using Infrastructure.Enums;
 using Infrastructure.Config;
 using Dapper.Contrib.Extensions;
-using Focus.Repository.Models.DbEntitys;
 using StackExchange.Profiling;
 using StackExchange.Profiling.Data;
 using System.Data.SqlClient;

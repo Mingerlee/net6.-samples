@@ -17,7 +17,7 @@ namespace Focus.Repository.DBManager
             using (DbHelper db=DbHelperFactory.Create()) 
             {
                 var user = UserContext.Current.UserInfo;
-                SysSqlLog log = new SysSqlLog {
+                SysLogSQL log = new SysLogSQL {
                     LogCode = Guid.NewGuid().GetNextGuid(),
                     UserCode = user.UserCode,
                     LogContent = content,
