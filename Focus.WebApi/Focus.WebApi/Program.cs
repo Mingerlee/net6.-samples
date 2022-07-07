@@ -45,6 +45,17 @@ builder.Services.AddControllers(options =>
 //添加日志
 builder.Services.AddLogging(m => { m.AddNLog("config/NLog.config"); });
 
+//添加跨域
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", cors =>
+    {
+        cors.AllowAnyOrigin();
+        cors.AllowAnyHeader();
+        //cors.AllowAnyMethod();
+    });
+});
+
 //添加本地默认缓存
 builder.Services.AddMemoryCache();
 var app = builder.Build();
@@ -57,7 +68,8 @@ if (app.Environment.IsDevelopment())
 app.UseStaticHttpContext();
 
 app.UseStaticFiles();//静态资源
-app.UseCors();// 跨域配置
+//app.UseCors();// 跨域配置
+app.UseCors("AllowSpecificOrigin");
 app.UseSession();//使用session
 app.UseHttpsRedirection();
 

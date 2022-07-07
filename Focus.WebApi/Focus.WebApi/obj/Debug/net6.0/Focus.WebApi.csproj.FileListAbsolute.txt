@@ -238,3 +238,9 @@ D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\obj\Debug\net6.0\Focu
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\obj\Debug\net6.0\Focus.WebApi.pdb
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\obj\Debug\net6.0\Focus.WebApi.genruntimeconfig.cache
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\obj\Debug\net6.0\ref\Focus.WebApi.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\FluentValidation.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\Focus.Service.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\Focus.Service.pdb
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\Focus.WebApi.staticwebassets.runtime.json

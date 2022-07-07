@@ -75,6 +75,18 @@ namespace Infrastructure.Config
         {
             return Convert.ToBoolean(GetInstance().Config.GetSection(name).Value);
         }
+        public static bool ConfigExist(string name)
+        {
+            try
+            {
+                var result = GetInstance().Config.GetSection(name).Value;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
     public class Connection
     {

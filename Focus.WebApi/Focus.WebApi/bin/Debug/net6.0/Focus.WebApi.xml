@@ -48,6 +48,12 @@
             <param name="userService"></param>
             <param name="logger"></param>
         </member>
+        <member name="M:Focus.WebApi.Controllers.UploadFileController.UploadFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传文件
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Focus.WebApi.Filters.CustomerExceptionFilter.#ctor(Microsoft.Extensions.Logging.ILogger{Focus.WebApi.Filters.CustomerExceptionFilter})">
             <summary>
             
