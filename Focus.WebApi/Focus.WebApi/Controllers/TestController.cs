@@ -81,6 +81,31 @@ namespace Focus.WebApi.Controllers
             return Ok("Success");
         }
 
+        [HttpGet, Route("SetSession"), AllowAnonymous]
+        public IActionResult SetSession()
+        {
+            //Infrastructure.Utilities.HttpContext.Current.Session.SetString("MyTset",DateTime.Now.ToDateTimeString(true));
+            Infrastructure.Utilities.HttpContext.Current.Session.SetString("MyTset", (DateTime.Now.DiffDays(new DateTime(2022,7,17))).ToString());
+            return Ok("Success");
+        }
+
+        [HttpGet, Route("GetSession"), AllowAnonymous]
+        public IActionResult GetSession()
+        {
+            string result = Infrastructure.Utilities.HttpContext.Current.Session.GetString("MyTset")??"该Session不存在或者已被移除！";
+            Infrastructure.Utilities.HttpContext.Current.Session.Remove("MyTset");
+            return Ok(result);
+        }
+
+        [HttpGet, Route("GetVerifyCode"), AllowAnonymous]
+        public IActionResult GetVerifyCode()
+        {
+            string vCode = "";
+            byte [] result = Infrastructure.Utilities.VerifyCodeHelper.VerifyCodeBytes(ref vCode);
+            Infrastructure.Utilities.HttpContext.Current.Session.SetString("VerifyCode", vCode);
+            return Ok(new ResultModel<byte[]>(result));
+        }
+        
 
         private void AddAuthorization()
         {

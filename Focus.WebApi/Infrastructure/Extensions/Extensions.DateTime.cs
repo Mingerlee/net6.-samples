@@ -211,6 +211,17 @@ namespace Infrastructure.Models
 
             return sb.ToString();
         }
-
+        /// <summary>
+        /// 计算日期差
+        /// </summary>
+        /// <param name="startTime"></param>
+        /// <param name="endTime">结束日期</param>
+        /// <param name="includeToday">是否包含当天</param>
+        /// <returns>天</returns>
+        public static int DiffDays(this DateTime startTime, DateTime endTime,bool includeToday=false)
+        {
+            TimeSpan daysSpan = new TimeSpan(endTime.Date.Ticks - startTime.Date.Ticks);
+            return includeToday?daysSpan.Days+1: daysSpan.Days;
+        }
     }
 }

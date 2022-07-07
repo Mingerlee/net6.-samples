@@ -255,6 +255,10 @@
               "target": "Package",
               "version": "[6.4.0, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
             "Microsoft.AspNetCore": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -275,6 +279,10 @@
               "target": "Package",
               "version": "[4.2.22, )"
             },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.5.6, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -282,6 +290,10 @@
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.6.45, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
