@@ -32,6 +32,7 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())//Ste
     .ConfigureContainer<ContainerBuilder>(builder =>
 {
     builder.RegisterModule();
+    builder.RegisterDynamicProxys();//注册autofac代理
 });
 
 //全局注册控制器Filter

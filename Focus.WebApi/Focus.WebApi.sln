@@ -17,7 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据层", "数据层", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Focus.Repository", "Focus.Repository\Focus.Repository.csproj", "{EC1DD2F4-F267-4438-9732-817EE9427359}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Focus.IService", "Focus.IService\Focus.IService.csproj", "{385E19F0-1DF1-4833-9CC1-A334FAA7F9C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Focus.IService", "Focus.IService\Focus.IService.csproj", "{385E19F0-1DF1-4833-9CC1-A334FAA7F9C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Focus.DynamicProxys", "Focus.DynamicProxys\Focus.DynamicProxys.csproj", "{AC113119-62AF-4423-9C4F-C91BDCB79E88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{385E19F0-1DF1-4833-9CC1-A334FAA7F9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{385E19F0-1DF1-4833-9CC1-A334FAA7F9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{385E19F0-1DF1-4833-9CC1-A334FAA7F9C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC113119-62AF-4423-9C4F-C91BDCB79E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC113119-62AF-4423-9C4F-C91BDCB79E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC113119-62AF-4423-9C4F-C91BDCB79E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC113119-62AF-4423-9C4F-C91BDCB79E88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{B00E4209-D250-48A6-BEB6-398DB815FD58} = {79C1C63F-4946-43CA-8EB5-1578A5001C52}
 		{EC1DD2F4-F267-4438-9732-817EE9427359} = {FF0E6CE1-29E6-42D5-ABB5-82D469289F87}
 		{385E19F0-1DF1-4833-9CC1-A334FAA7F9C1} = {79C1C63F-4946-43CA-8EB5-1578A5001C52}
+		{AC113119-62AF-4423-9C4F-C91BDCB79E88} = {79C1C63F-4946-43CA-8EB5-1578A5001C52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09C55CDF-0F98-4385-A8A8-3AC6CC4A2460}

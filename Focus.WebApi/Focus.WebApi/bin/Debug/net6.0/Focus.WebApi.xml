@@ -33,6 +33,12 @@
             </summary>
             <param name="app"></param>
         </member>
+        <member name="M:Focus.WebApi.Controllers.DynamicProxyController.#ctor(Focus.IService.IServices.IDynamicProxyService)">
+            <summary>
+            
+            </summary>
+            <param name="proxyService"></param>
+        </member>
         <member name="M:Focus.WebApi.Controllers.EMailController.SendEmail(Infrastructure.Models.MailContent)">
             <summary>
             发送邮件

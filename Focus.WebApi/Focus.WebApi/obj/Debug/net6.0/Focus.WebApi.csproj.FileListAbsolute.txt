@@ -254,3 +254,7 @@ D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\NPOI
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\NPOI.dll
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\Castle.Core.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\Focus.DynamicProxys.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.WebApi\bin\Debug\net6.0\Focus.DynamicProxys.pdb

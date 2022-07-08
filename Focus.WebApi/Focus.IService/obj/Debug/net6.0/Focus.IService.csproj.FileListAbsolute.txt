@@ -15,3 +15,5 @@ D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.IService\obj\Debug\net6.0\Fo
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.IService\obj\Debug\net6.0\refint\Focus.IService.dll
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.IService\obj\Debug\net6.0\Focus.IService.pdb
 D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.IService\obj\Debug\net6.0\ref\Focus.IService.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.IService\bin\Debug\net6.0\Focus.DynamicProxys.dll
+D:\oym\NET6-GitHup\net6.-samples\Focus.WebApi\Focus.IService\bin\Debug\net6.0\Focus.DynamicProxys.pdb

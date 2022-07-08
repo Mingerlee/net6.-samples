@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Focus.DynamicProxys\Focus.DynamicProxys.csproj" />
     <ProjectReference Include="..\Focus.Repository\Focus.Repository.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
