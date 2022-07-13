@@ -3,3 +3,15 @@
 ################################################################################
 
 /Focus.WebApi/.vs/Focus.WebApi/FileContentIndex/8a4f020e-8501-4eb1-bc87-ce046cd618ff.vsidx
+/Focus.WebApi/Focus.WebApi/bin
+/Focus.WebApi/Focus.WebApi/obj
+/Focus.WebApi/Infrastructure/bin
+/Focus.WebApi/Infrastructure/obj
+/Focus.WebApi/Focus.Service/bin
+/Focus.WebApi/Focus.Service/obj
+/Focus.WebApi/Focus.Repository/bin
+/Focus.WebApi/Focus.Repository/obj
+/Focus.WebApi/Focus.IService/bin
+/Focus.WebApi/Focus.IService/obj
+/Focus.WebApi/Focus.DynamicProxys/bin
+/Focus.WebApi/Focus.DynamicProxys/obj
