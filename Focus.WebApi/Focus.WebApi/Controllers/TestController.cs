@@ -16,6 +16,7 @@ using FluentValidation.Results;
 using Infrastructure.Enums;
 using Infrastructure.Utilities;
 using Newtonsoft.Json;
+using Focus.WebApi.Filters;
 
 namespace Focus.WebApi.Controllers
 {
@@ -63,21 +64,21 @@ namespace Focus.WebApi.Controllers
         /// </summary>
         /// <param name="sysUser"></param>
         /// <returns></returns>
-        [HttpPost("W104"), AllowAnonymous]
+        [HttpPost("W104"), AllowAnonymous, ParamValidate(typeof(SysUserValidation))]
         public async Task<IActionResult> GetSysUser(SysUser sysUser)
         {
-            SysUserValidation validationRules = new SysUserValidation();
-            ValidationResult vResult = validationRules.Validate(sysUser);
-            if (!vResult.IsValid)
-            {
-                //Tips:验证不通过，输出验证信息
-                ResultModel<List<ValidationFailureResult>> mResult = new ResultModel<List<ValidationFailureResult>> {
-                    Status = 0,
-                    Data= vResult.Errors.ToValidationFailureResultList(typeof(SysUser)),
-                    ErrorCode = ResponseCode.sys_verify_failed
-                };
-                return Ok(mResult);
-            }
+            //SysUserValidation validationRules = new SysUserValidation();
+            //ValidationResult vResult = validationRules.Validate(sysUser);
+            //if (!vResult.IsValid)
+            //{
+            //    //Tips:验证不通过，输出验证信息
+            //    ResultModel<List<ValidationFailureResult>> mResult = new ResultModel<List<ValidationFailureResult>> {
+            //        Status = 0,
+            //        Data= vResult.Errors.ToValidationFailureResultList(typeof(SysUser)),
+            //        ErrorCode = ResponseCode.sys_verify_failed
+            //    };
+            //    return Ok(mResult);
+            //}
             //验证通过执行 业务逻辑
             return Ok(await _userService.GetSysUser(sysUser));
         }

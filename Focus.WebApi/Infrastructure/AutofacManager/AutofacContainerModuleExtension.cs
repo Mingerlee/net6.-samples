@@ -6,6 +6,7 @@ using Infrastructure.CacheManager.IService;
 using Infrastructure.CacheManager.Service;
 using Infrastructure.Config;
 using Infrastructure.UserManager;
+using Infrastructure.ValidationManager;
 using Microsoft.Extensions.DependencyModel;
 using StackExchange.Profiling.Data;
 using System;
@@ -38,7 +39,10 @@ namespace Infrastructure.AutofacManager
              .AsSelf().AsImplementedInterfaces()
              .InstancePerLifetimeScope();
 
-            builder.RegisterType<UserContext>().InstancePerLifetimeScope();        
+            builder.RegisterType<UserContext>().InstancePerLifetimeScope();
+            //注册验证实体参数服务
+            builder.RegisterType<ValidatorService>().As<IValidatorService>().SingleInstance();
+            new ValidatorContainer();//初始化字典
         }
         /// <summary>
         /// 注册autofac代理
