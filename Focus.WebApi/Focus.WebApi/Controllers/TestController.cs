@@ -117,6 +117,17 @@ namespace Focus.WebApi.Controllers
             return Ok("Success");
         }
         /// <summary>
+        /// FluentValidation 示例（没有特性）
+        /// </summary>
+        /// <param name="sysUser"></param>
+        /// <returns></returns>
+        [HttpPost("W108"), AllowAnonymous]
+        public IActionResult ValidateUser(SysUser sysUser)
+        {
+            return Ok("没有FluentValidation验证");
+        }
+
+        /// <summary>
         /// 设置Session
         /// </summary>
         /// <returns></returns>
