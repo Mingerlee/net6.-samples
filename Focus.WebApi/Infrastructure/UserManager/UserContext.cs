@@ -19,7 +19,7 @@ namespace Infrastructure.UserManager
         {
             get
             {
-                return Utilities.HttpContext.Current;
+                return Utilities.HttpContextHelper.Current;
             }
         }
         public UserToken UserInfo

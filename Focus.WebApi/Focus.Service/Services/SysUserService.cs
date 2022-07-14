@@ -2,7 +2,7 @@
 using Focus.IService;
 using Infrastructur.AutofacManager;
 using Focus.Repository.DBContext;
-using Focus.Service.ValidationModels;
+using Focus.Service.Validations;
 using FluentValidation.Results;
 using Infrastructure.Models;
 using Infrastructure.Enums;
@@ -47,7 +47,7 @@ namespace Focus.Service
         public async Task<ResultModel<SysUser>> GetSysUser(SysUser sysUser)
         {
             var result = new ResultModel<SysUser>();
-            SysUserValidationAttribute validationRules = new SysUserValidationAttribute();
+            SysUserValidation validationRules = new SysUserValidation();
             ValidationResult validaResult = await validationRules.ValidateAsync(sysUser);
             if (!validaResult.IsValid)   //校验通过
             {

@@ -4,6 +4,8 @@ using Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
+using Infrastructure.Enums;
+using Infrastructure.Utilities;
 
 namespace Focus.WebApi.Filters
 {
@@ -30,7 +32,7 @@ namespace Focus.WebApi.Filters
                     _logger.LogError(BuilderMsg(context));
                     // 设置为true，表示异常已经被处理了
                     context.ExceptionHandled = true;
-                    context.Result = new OkObjectResult(new ResultModel<string>(0, Infrastructure.Enums.ResponseCode.sys_exception, "网络请求超时,请稍后再试 !"));
+                    context.Result = new OkObjectResult(new ResultModel<string>(0, ResponseCode.sys_exception, "网络请求超时,请稍后再试 !"));
                 }
             }
             return Task.CompletedTask;
@@ -45,7 +47,7 @@ namespace Focus.WebApi.Filters
             {
 
                 string route = context.HttpContext.Request.Path;
-                string ip = Infrastructure.Utilities.HttpContext.GetIp;
+                string ip = HttpContextHelper.GetIp;
                 string id = context.HttpContext.TraceIdentifier;
 
                 string cacheKey = $"{ip.Replace('.', '_')}_{route.Replace('/', '_')}_{id}";

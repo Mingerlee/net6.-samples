@@ -20,9 +20,9 @@ namespace Infrastructure.AutofacManager
 
         public static object GetService(this Type serviceType)
         {
-            if (Utilities.HttpContext.Current == null) return ServiceProviderAccessor.ServiceProvider.GetService(serviceType);
+            if (Utilities.HttpContextHelper.Current == null) return ServiceProviderAccessor.ServiceProvider.GetService(serviceType);
 
-            return Utilities.HttpContext.Current.RequestServices.GetService(serviceType);
+            return Utilities.HttpContextHelper.Current.RequestServices.GetService(serviceType);
         }
 
         public static TService GetContainerService<TService>() where TService : class

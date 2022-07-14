@@ -1,5 +1,6 @@
 ﻿using Infrastructure.CacheManager;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Infrastructure.Utilities;
 
 namespace Focus.WebApi.Filters
 {
@@ -8,7 +9,7 @@ namespace Focus.WebApi.Filters
         public void OnResultExecuted(ResultExecutedContext context)
         {
             string route = context.HttpContext.Request.Path;
-            string ip = Infrastructure.Utilities.HttpContext.GetIp;
+            string ip = HttpContextHelper.GetIp;
             string id = context.HttpContext.TraceIdentifier;
 
             string cacheKey = $"{ip.Replace('.', '_')}_{route.Replace('/', '_')}_{id}";

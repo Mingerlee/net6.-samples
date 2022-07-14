@@ -10,11 +10,11 @@ using System.Text;
 
 namespace Infrastructure.Utilities
 {
-    public static class HttpContext
+    public static class HttpContextHelper
     {
         private static IHttpContextAccessor _accessor;
 
-        public static Microsoft.AspNetCore.Http.HttpContext Current => _accessor.HttpContext;
+        public static HttpContext Current => _accessor.HttpContext;
 
         public static void Configure(IHttpContextAccessor accessor)
         {
@@ -106,7 +106,7 @@ namespace Infrastructure.Utilities
         public static IApplicationBuilder UseStaticHttpContext(this IApplicationBuilder app)
         {
             var httpContextAccessor = app.ApplicationServices.GetRequiredService<IHttpContextAccessor>();
-            HttpContext.Configure(httpContextAccessor);
+            HttpContextHelper.Configure(httpContextAccessor);
             return app;
         }
     }
