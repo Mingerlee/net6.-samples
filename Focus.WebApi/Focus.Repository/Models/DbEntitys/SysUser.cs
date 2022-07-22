@@ -1,7 +1,7 @@
 ﻿using Dapper.Contrib.Extensions;
 using System.ComponentModel;
 
-namespace Focus.Repository.Models.DbEntitys
+namespace Focus.Repository.Models
 {
     [Table("SysUser")]
     public class SysUser:BaseEntity

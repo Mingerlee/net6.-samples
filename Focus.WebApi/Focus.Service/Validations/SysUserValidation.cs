@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Focus.Repository.Models.DbEntitys;
+using Focus.Repository.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

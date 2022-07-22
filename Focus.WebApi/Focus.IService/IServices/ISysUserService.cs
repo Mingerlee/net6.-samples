@@ -1,4 +1,4 @@
-﻿using Focus.Repository.Models.DbEntitys;
+﻿using Focus.Repository.Models;
 using Infrastructure.Models;
 using System;
 using System.Collections.Generic;

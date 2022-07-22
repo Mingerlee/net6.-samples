@@ -1,4 +1,4 @@
-﻿using Focus.Repository.Models.DbEntitys;
+﻿using Focus.Repository.Models;
 using Focus.IService;
 using Infrastructur.AutofacManager;
 using Focus.Repository.DBContext;

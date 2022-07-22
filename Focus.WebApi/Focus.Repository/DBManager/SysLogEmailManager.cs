@@ -1,5 +1,5 @@
 ﻿using Focus.Repository.DBContext;
-using Focus.Repository.Models.DbEntitys;
+using Focus.Repository.Models;
 using Infrastructure.Models;
 using Infrastructure.UserManager;
 using System;

@@ -289,6 +289,28 @@ namespace Focus.Repository.DBContext
                 }
             }
         }
+        public async Task<int> ExecuteInsertListAsync<T>(string sql, List<T> models)
+        {
+            try
+            {
+                if (_sharedConn.State == ConnectionState.Closed)
+                {
+                    _sharedConn.Open();
+                }
+                return await Dapper.SqlMapper.ExecuteAsync(_sharedConn, sql, models, _tran);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (_tran == null)
+                {
+                    _sharedConn.Close();
+                }
+            }
+        }
 
         /// <summary>
         /// 执行sql语句
@@ -705,7 +727,50 @@ namespace Focus.Repository.DBContext
 
             return page;
         }
+        public async Task<ListPage<T>> QueryListAsync<T>(string sql, QueryModel sc, params object[] args) where T : class
+        {
+            int currentPage = sc.CurrentPageIndex>0? sc.CurrentPageIndex:1;
+            int itemsPerPage = sc.PageRows > 0 ? sc.PageRows:20;
+            QueryCondition qc = QueryParam.GetQueryCondition(sc);
+            sql += qc.WhereString;
+            //当前sql查询结果条数
+            ListPage<T> page = new ListPage<T>() { CurrentPage = currentPage, PerPageItems = itemsPerPage };
+            Type t = typeof(T);
+            string orderCol = "Id";
+            foreach (PropertyInfo p in t.GetProperties())
+            {
+                object[] attributeKey = p.GetCustomAttributes(typeof(KeyAttribute), false);
+                object[] attributesExplicitKey = p.GetCustomAttributes(typeof(ExplicitKeyAttribute), false);
+                if (attributeKey.Length > 0)
+                {
+                    orderCol = p.Name;
+                    break;
+                }
+                if (attributesExplicitKey.Length > 0)
+                {
+                    orderCol = p.Name;
+                    break;
+                }
+            }
+            BuilderPageSql(sql, itemsPerPage, currentPage, orderCol);
+            if (itemsPerPage == 0)
+            {
+                page.data = (await QueryListAsync<T>(_sqlPage, args)).ToList<T>();
+                page.TotalItems = page.data.Count;
+            }
+            else
+            {
+                int itemcount = await ExecuteScalarAsync<int>(_sqlCount, args);
+                page.TotalItems = itemcount;
+                page.TotalPages = ((page.TotalItems - 1) / itemsPerPage) + 1;
+                if (itemcount == 0)
+                    page.data = new List<T>();
+                else
+                    page.data = (await QueryListAsync<T>(_sqlPage, args)).ToList<T>();
+            }
 
+            return page;
+        }
         /// <summary>
         /// 分页查询(汇总部分列)
         /// </summary>

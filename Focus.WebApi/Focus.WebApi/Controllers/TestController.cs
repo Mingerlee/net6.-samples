@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using Focus.IService;
-using Focus.Repository.Models.DbEntitys;
+using Focus.Repository.Models;
 using Focus.Repository.DBContext;
 using Focus.WebApi.Attributes;
 using Infrastructure.CacheManager;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Focus.Repository.Models.DbEntitys
+namespace Focus.Repository.Models
 {
     [Table("SysLogEmails")]
     public class SysLogEmail: BaseEntity

@@ -1,6 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 
-namespace Focus.Repository.Models.DbEntitys
+namespace Focus.Repository.Models
 {
     /// <summary>
     /// 系统SQL日志表
