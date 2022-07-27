@@ -11,7 +11,6 @@ namespace Focus.Repository.Models
         public int ProcessStep { get; set; }
         public SysAuditMethod AuditMethod { get; set; }
         public SysAuditType AuditType { get; set; }
-        public bool IsEnable { get; set; }
         public List<ReqSysProcessAudit> reqSysProcessAudits { get; set; }
     }
 }

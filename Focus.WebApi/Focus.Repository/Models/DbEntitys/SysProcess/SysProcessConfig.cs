@@ -37,10 +37,6 @@ namespace Focus.Repository.Models
         ///创建人
         ///<summary>
         public string Creator {get;set;}
-        ///<summary>
-        ///是否启用，默认为启用
-        ///<summary>
-        public bool IsEnable {get;set;}
         /// <summary>
         /// 流程审核配置 列表
         /// </summary>

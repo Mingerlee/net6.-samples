@@ -10,16 +10,16 @@ namespace Focus.Repository.Models
     public enum SysProcessType
     {
         [Description("注册")]
-        register=0,
+        register = 0,
 
         [Description("其他")]
-        other =99
+        other = 99
     }
 
     public enum SysAuditMethod
     {
         [Description("指定人员")]
-        assign_personnel =1,
+        assign_personnel = 1,
         [Description("指定岗位")]
         assign_post = 2,
         [Description("指定角色")]
@@ -39,5 +39,19 @@ namespace Focus.Repository.Models
         /// </summary>
         [Description("会签")]
         and_sign = 2,
+    }
+    public enum SysProcessWorkType
+    {
+        [Description("注册")]
+        register = 1,
+    }
+    public enum SysProcessAuditStatus
+    {
+        [Description("已提交")]
+        Submitted = 101,
+        [Description("审核通过")]
+        Approved = 180,
+        [Description("驳回")]
+        Rejected = 190,
     }
 }

@@ -441,6 +441,52 @@ namespace Focus.Repository.DBContext
                 }
             }
         }
+        public async Task<object> GetScalarAsync(string sql, params object[] args)
+        {
+            try
+            {
+                if (_sharedConn.State == ConnectionState.Closed)
+                {
+                    _sharedConn.Open();
+                }
+                return await Dapper.SqlMapper.ExecuteScalarAsync(_sharedConn, sql, ConvertParam(args), _tran);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (_tran == null)
+                {
+                    _sharedConn.Close();
+                }
+            }
+        }
+        public async Task<int> GetScalarToInt(string sql, params object[] args)
+        {
+            try
+            {
+                return Convert.ToInt32(await GetScalarAsync(sql, args));
+            }
+            catch
+            {
+                //throw;
+                return 0;
+            }
+        }
+        public async Task<bool> Any(string sql, params object[] args)
+        {
+            try
+            {
+                return Convert.ToBoolean(await GetScalarAsync(sql, args));
+            }
+            catch
+            {
+                //throw;
+                return false;
+            }
+        }
         /// <summary>
         /// 查询Model
         /// </summary>

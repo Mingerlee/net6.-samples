@@ -61,7 +61,6 @@ namespace Focus.Service.Services
                         sysProcessConfig.ProcessStep = reqSysProcessConfig.ProcessStep;
                         sysProcessConfig.AuditMethod = reqSysProcessConfig.AuditMethod;
                         sysProcessConfig.AuditType=reqSysProcessConfig.AuditType;
-                        sysProcessConfig.IsEnable=reqSysProcessConfig.IsEnable;
                         sysProcessConfig.Creator = userCode;
                         sysProcessConfig.CreateDate = currentDateTime;
                         long sysProcessConfigId= await db.InsertAsync(sysProcessConfig);

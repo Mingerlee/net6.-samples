@@ -49,51 +49,51 @@ namespace Focus.WebApi.Controllers
             AddAuthorization();
             return Ok(new ResultModel<string>("Success"));
         }
-        /// <summary>
-        /// 测试Async 获取数据库数据
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet, Route("W103"), AllowAnonymous]
-        public async Task<IActionResult> Get(int id)
-        {
-            return Ok(new ResultModel<SysUser>(await _userService.GetSysUser(id)));
-        }
-        /// <summary>
-        /// FluentValidation 示例
-        /// </summary>
-        /// <param name="sysUser"></param>
-        /// <returns></returns>
-        [HttpPost("W104"), AllowAnonymous, ParamValidate(typeof(SysUserValidation))]
-        public async Task<IActionResult> GetSysUser(SysUser sysUser)
-        {
-            //SysUserValidation validationRules = new SysUserValidation();
-            //ValidationResult vResult = validationRules.Validate(sysUser);
-            //if (!vResult.IsValid)
-            //{
-            //    //Tips:验证不通过，输出验证信息
-            //    ResultModel<List<ValidationFailureResult>> mResult = new ResultModel<List<ValidationFailureResult>> {
-            //        Status = 0,
-            //        Data= vResult.Errors.ToValidationFailureResultList(typeof(SysUser)),
-            //        ErrorCode = ResponseCode.sys_verify_failed
-            //    };
-            //    return Ok(mResult);
-            //}
-            //验证通过执行 业务逻辑
-            return Ok(await _userService.GetSysUser(sysUser));
-        }
-        /// <summary>
-        /// CustomerExceptionFilter 示例 （需登录）
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet, Route("W105")]
-        public async Task<IActionResult> GetSysUserById(int id)
-        {
-            int i = 0, j = 10;
-            int x = j / i;
-            return Ok(new ResultModel<SysUser>(await _userService.GetSysUsers(id)));
-        }
+        ///// <summary>
+        ///// 测试Async 获取数据库数据
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //[HttpGet, Route("W103"), AllowAnonymous]
+        //public async Task<IActionResult> Get(int id)
+        //{
+        //    return Ok(new ResultModel<SysUser>(await _userService.GetSysUser(id)));
+        //}
+        ///// <summary>
+        ///// FluentValidation 示例
+        ///// </summary>
+        ///// <param name="registerSysUser"></param>
+        ///// <returns></returns>
+        //[HttpPost("W104"), AllowAnonymous, ParamValidate(typeof(RegisterSysUserValidation))]
+        //public async Task<IActionResult> GetSysUser(RegisterSysUser registerSysUser)
+        //{
+        //    //SysUserValidation validationRules = new SysUserValidation();
+        //    //ValidationResult vResult = validationRules.Validate(sysUser);
+        //    //if (!vResult.IsValid)
+        //    //{
+        //    //    //Tips:验证不通过，输出验证信息
+        //    //    ResultModel<List<ValidationFailureResult>> mResult = new ResultModel<List<ValidationFailureResult>> {
+        //    //        Status = 0,
+        //    //        Data= vResult.Errors.ToValidationFailureResultList(typeof(SysUser)),
+        //    //        ErrorCode = ResponseCode.sys_verify_failed
+        //    //    };
+        //    //    return Ok(mResult);
+        //    //}
+        //    //验证通过执行 业务逻辑
+        //    return Ok(await _userService.GetSysUser(registerSysUser));
+        //}
+        ///// <summary>
+        ///// CustomerExceptionFilter 示例 （需登录）
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //[HttpGet, Route("W105")]
+        //public async Task<IActionResult> GetSysUserById(int id)
+        //{
+        //    int i = 0, j = 10;
+        //    int x = j / i;
+        //    return Ok(new ResultModel<SysUser>(await _userService.GetSysUsers(id)));
+        //}
         /// <summary>
         /// 角色权限示例 Administrator
         /// </summary>

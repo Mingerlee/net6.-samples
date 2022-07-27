@@ -1,4 +1,7 @@
-﻿using Focus.Repository.Models;
+﻿using Autofac.Extras.DynamicProxy;
+using Focus.DynamicProxys.Interceptors;
+using Focus.Repository.Models;
+using Infrastructur.AutofacManager;
 using Infrastructure.Models;
 using System;
 using System.Collections.Generic;
@@ -10,10 +13,7 @@ namespace Focus.IService
 {
     public interface ISysUserService
     {
-        Task<SysUser> GetSysUser(int id);
-        Task<SysUser> GetSysUsers(int id);
-        SysUser GetSysUserById(int id);
-        Task<ResultModel<SysUser>> GetSysUser(SysUser sysUser);
+        Task<ResultModel<string>> RegisterSysUsers(RegisterSysUser registerSysUser);
 
     }
 }
