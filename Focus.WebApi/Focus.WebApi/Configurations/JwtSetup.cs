@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Config;
 using Infrastructure.DEncrypt;
-using Infrastructure.Extensions;
+using Infrastructure.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;

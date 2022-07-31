@@ -1,5 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
-using System.ComponentModel;
+using Infrastructure.Models;
 
 namespace Focus.Repository.Models
 {
@@ -25,7 +25,7 @@ namespace Focus.Repository.Models
     //    public int? Valid { get; set; }
     //}
     [Table("SysUser")]
-    public class SysUser: BaseEntity
+    public class SysUser : BaseEntity
     {
         ///<summary>
         ///用户Id主键
@@ -59,6 +59,7 @@ namespace Focus.Repository.Models
         ///<summary>
         ///注册日期
         ///<summary>
+        [CompareValue]
         public DateTime RegDate { get; set; }
 
     }

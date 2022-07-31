@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.Extensions
+namespace Infrastructure.Models
 {
-    public static class ConvertJsonExtension
+    public static partial class ConvertJsonExtension
     {
         /// <summary>
         /// 序列化

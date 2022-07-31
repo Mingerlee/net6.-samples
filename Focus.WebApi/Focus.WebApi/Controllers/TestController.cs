@@ -102,7 +102,7 @@ namespace Focus.WebApi.Controllers
         public IActionResult TestAuthorizeRoles()
         {
             //获取随机数
-            string guid=Guid.NewGuid().GetNextGuid().ToString();
+            string guid = Guid.NewGuid().GetNextGuid().ToString();
             return Ok("Success");
         }
         /// <summary>
@@ -160,7 +160,32 @@ namespace Focus.WebApi.Controllers
             HttpContextHelper.Current.Session.SetString("VerifyCode", vCode);
             return Ok(new ResultModel<byte[]>(result));
         }
-
+        /// <summary>
+        /// 对比实体数据是否修改
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("W109"), AllowAnonymous]
+        public IActionResult CompareModel()
+        {
+            //CompareHelper.CompareToString<SysUser>();
+            SysUser user1 = new SysUser
+            {
+                UserId = 1,
+                UserName = "张三",
+                IsInternal = true,
+                RegDate = DateTime.Now
+            };
+            SysUser user2 = new SysUser
+            {
+                UserId = 1,
+                UserName = "张三",
+                IsInternal = false,
+                RegDate = DateTime.Now
+            };
+            bool s = user1.IsModify(user2);
+            var sf = user2.CompareModel(user1);
+            return Ok();
+        }
 
         private void AddAuthorization()
         {
