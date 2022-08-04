@@ -20,6 +20,16 @@ namespace Focus.Service
         {
             _logger = logger;
         }
+
+        public Task<SysUser> Login(ReqSysLogin login)
+        {
+            using (DbHelper db = DbHelperFactory.Create())
+            {
+                string sqlStr = "";
+            }
+            throw new NotImplementedException();
+        }
+
         public async Task<ResultModel<string>> RegisterSysUsers(RegisterSysUser registerSysUser)
         {
             using (DbHelper db = DbHelperFactory.Create())
@@ -55,7 +65,7 @@ namespace Focus.Service
 
                     await db.InsertAsync(sysLogin);
 
-                    bool result =await CreateWorkProcess(SysProcessWorkType.register,Convert.ToInt32(sysUserId),db);
+                    bool result = await CreateWorkProcess(SysProcessWorkType.register, Convert.ToInt32(sysUserId), db);
 
                     if (result)
                     {

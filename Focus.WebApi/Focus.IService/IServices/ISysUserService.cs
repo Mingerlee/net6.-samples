@@ -14,6 +14,7 @@ namespace Focus.IService
     public interface ISysUserService
     {
         Task<ResultModel<string>> RegisterSysUsers(RegisterSysUser registerSysUser);
+        Task<SysUser> Login(ReqSysLogin login);
 
     }
 }

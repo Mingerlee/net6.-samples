@@ -58,5 +58,9 @@ namespace Infrastructure.Models
         /// 平台账号
         /// </summary>
         public int Account { get; set; }
+        /// <summary>
+        /// 角色
+        /// </summary>
+        public string Role { get; set; }
     }
 }
