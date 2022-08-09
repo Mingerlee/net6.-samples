@@ -204,12 +204,13 @@ namespace Focus.WebApi.Controllers
         [HttpGet("W111"), AllowAnonymous]
         public IActionResult TestAutoMapper()
         {
-            SysUser sysUser = new SysUser { 
-                UserName="张三",
-                PhoneNumber="15200000000",
-                Email="1234@qq.com"
+            SysUser sysUser = new SysUser
+            {
+                UserName = "张三",
+                PhoneNumber = "15200000000",
+                Email = "1234@qq.com"
             };
-            var RegUser=_mapper.Map<SysUser>(sysUser);
+            RegisterSysUser RegUser = _mapper.Map<RegisterSysUser>(sysUser);
             return Ok(RegUser);
         }
 
@@ -220,13 +221,13 @@ namespace Focus.WebApi.Controllers
         [HttpGet("W112"), AllowAnonymous]
         public IActionResult TestAutoMapper2()
         {
-             RegisterSysUser regUser = new RegisterSysUser
-             {
+            RegisterSysUser regUser = new RegisterSysUser
+            {
                 UserName = "李四",
-                PhoneNubmer="15200000001",
+                PhoneNumber = "15200000001",
                 Email = "123456@qq.com"
             };
-            var sysUser = _mapper.Map<RegisterSysUser>(regUser);
+            SysUser sysUser = _mapper.Map<SysUser>(regUser);
             return Ok(sysUser);
         }
 

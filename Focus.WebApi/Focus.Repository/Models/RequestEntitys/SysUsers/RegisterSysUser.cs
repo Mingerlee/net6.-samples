@@ -18,7 +18,7 @@ namespace Focus.Repository.Models
         [Description("用户名称")]
         public string UserName { get; set; }
         [Description("手机号码")]
-        public string? PhoneNubmer { get; set; }
+        public string? PhoneNumber { get; set; }
         [Description("用户住址")]
         public string? Address { get; set; }
         [Description("用户邮箱")]

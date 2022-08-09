@@ -21,7 +21,7 @@ namespace Focus.Service.Validations
                                                   .Length(6, 16).WithMessage("密码长度至少6个字符，最多16个字符");
                                                   //.Must(EncryptionPassword).WithMessage("密码不符合规则,必须包含数字、小写或大写字母、特殊符号");
             RuleFor(x => x.ConfirmLoginPwd).NotEmpty().WithMessage("确认密码不能为空").Must(ComparePassword).WithMessage("确认密码必须跟密码一样");
-            RuleFor(x => x.PhoneNubmer).NotEmpty().WithMessage("手机号不能为空")
+            RuleFor(x => x.PhoneNumber).NotEmpty().WithMessage("手机号不能为空")
                 .Must(IsMobile).WithMessage("手机号格式不正确");
         }
         private bool EncryptionPassword(string password)

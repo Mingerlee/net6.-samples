@@ -14,7 +14,8 @@ namespace Focus.Repository.Models
         public DomainToViewModelMappingProfile()
         {
             //CreateMap<,>();
-            CreateMap<SysUser, RegisterSysUser>();
+            //CreateMap<SysUser, RegisterSysUser>();
+            //CreateMap<RegisterSysUser, SysUser>();
         }
     }
 }

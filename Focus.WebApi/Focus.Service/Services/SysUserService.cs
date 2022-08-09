@@ -41,7 +41,7 @@ namespace Focus.Service
                     SysUser sysUser = new SysUser
                     {
                         UserName = registerSysUser.UserName,
-                        PhoneNumber = registerSysUser.PhoneNubmer,
+                        PhoneNumber = registerSysUser.PhoneNumber,
                         UserAddress = registerSysUser.Address,
                         Email = registerSysUser.Email,
                         IsInternal = false,

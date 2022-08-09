@@ -14,7 +14,7 @@ namespace Focus.Repository.Models
         {
             //CreateMap<, >()
             //    .ConstructUsing(c => new ());
-            CreateMap<RegisterSysUser, SysUser>();
+            //CreateMap<RegisterSysUser, SysUser>();
         }
     }
 }
