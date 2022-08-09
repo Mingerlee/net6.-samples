@@ -19,6 +19,8 @@ namespace Focus.WebApi.Filters
             string ip = Infrastructure.Utilities.HttpContextHelper.GetIp;
             string id = context.HttpContext.TraceIdentifier;
             string cacheKey = $"{ip.Replace('.', '_')}_{route.Replace('/', '_')}_{id}";
+            //context.HttpContext.Items.Add(cacheKey, context.ActionArguments);
+            //context.HttpContext.Items.TryGetValue(cacheKey, out var value);
             CacheContext.Cache.AddObject(cacheKey, context.ActionArguments);//存入缓存
         }
     }

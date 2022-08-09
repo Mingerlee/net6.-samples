@@ -13,12 +13,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
-builder.Services.AddSwaggerSetup();
-builder.Services.AddJwtAuthSetup(builder.Configuration);
+builder.Services.AddSwaggerSetup();//×¢²áSwaggerÅäÖÃ
+builder.Services.AddJwtAuthSetup(builder.Configuration);//×¢²áJWTÅäÖÃ
+builder.Services.AddAutoMapperSetup();//×¢²áAutoMapper
 //builder.Services.AddMiniProfiler();
 //×¢²ásession
 builder.Services.AddDistributedMemoryCache();//ÆôÓÃÄÚ´æ»º´æ
@@ -35,6 +36,7 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())//Ste
     builder.RegisterDynamicProxys();//×¢²áautofac´úÀí
 });
 
+//×¢²á¿ØÖÆÆ÷
 //È«¾Ö×¢²á¿ØÖÆÆ÷Filter
 builder.Services.AddControllers(options =>
 {
@@ -42,6 +44,7 @@ builder.Services.AddControllers(options =>
     options.Filters.Add(typeof(CustomerExceptionFilter));
     options.Filters.Add(typeof(CustomerActionFilter));
     options.Filters.Add(typeof(CustomerResultFilter));
+    options.Filters.Add(typeof(CreateProcessActionFilter));
 });
 //Ìí¼ÓÈÕÖ¾
 builder.Services.AddLogging(m => { m.AddNLog("config/NLog.config"); });

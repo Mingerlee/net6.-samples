@@ -17,6 +17,7 @@ using Infrastructure.Enums;
 using Infrastructure.Utilities;
 using Newtonsoft.Json;
 using Focus.WebApi.Filters;
+using AutoMapper;
 
 namespace Focus.WebApi.Controllers
 {
@@ -27,17 +28,20 @@ namespace Focus.WebApi.Controllers
         private readonly TokenManagement _tokenManagement;
         private readonly ISysUserService _userService;
         private readonly ILogger<TestController> _logger;
+        private readonly IMapper _mapper;
         /// <summary>
         /// 
         /// </summary>
         /// <param name="tokenManagement"></param>
         /// <param name="userService"></param>
         /// <param name="logger"></param>
-        public TestController(ILogger<TestController> logger, IOptions<TokenManagement> tokenManagement, ISysUserService userService)
+        /// <param name="mapper"></param>
+        public TestController(ILogger<TestController> logger, IOptions<TokenManagement> tokenManagement, ISysUserService userService, IMapper mapper)
         {
             _tokenManagement = tokenManagement.Value;
             _userService = userService;
             _logger = logger;
+            _mapper = mapper;
         }
         /// <summary>
         /// 登录授权(默认角色为：Administrator)
@@ -185,6 +189,45 @@ namespace Focus.WebApi.Controllers
             bool s = user1.IsModify(user2);
             var sf = user2.CompareModel(user1);
             return Ok();
+        }
+
+        [HttpGet("W110"), AllowAnonymous]
+        public IActionResult TestHttpContext()
+        {
+            Console.WriteLine(HttpContext.TraceIdentifier);
+            return Ok();
+        }
+        /// <summary>
+        /// AutoMapper 示例 DB Entity To ViewModel
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("W111"), AllowAnonymous]
+        public IActionResult TestAutoMapper()
+        {
+            SysUser sysUser = new SysUser { 
+                UserName="张三",
+                PhoneNumber="15200000000",
+                Email="1234@qq.com"
+            };
+            var RegUser=_mapper.Map<SysUser>(sysUser);
+            return Ok(RegUser);
+        }
+
+        /// <summary>
+        /// AutoMapper 示例 ViewModel To DB Entity
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("W112"), AllowAnonymous]
+        public IActionResult TestAutoMapper2()
+        {
+             RegisterSysUser regUser = new RegisterSysUser
+             {
+                UserName = "李四",
+                PhoneNubmer="15200000001",
+                Email = "123456@qq.com"
+            };
+            var sysUser = _mapper.Map<RegisterSysUser>(regUser);
+            return Ok(sysUser);
         }
 
         private void AddAuthorization()
