@@ -6,6 +6,8 @@ using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authorization;
 using Focus.WebApi.Filters;
 using NLog.Extensions.Logging;
+using Focus.WebApi.Extensions;
+using Focus.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 //var Configuration = new ConfigurationBuilder().Add(new MemoryConfigurationSource()).Build();
@@ -35,7 +37,8 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())//Ste
     builder.RegisterModule();
     builder.RegisterDynamicProxys();//注册autofac代理
 });
-
+//注册应用服务
+builder.Services.AddAppServices();
 //注册控制器
 //全局注册控制器Filter
 builder.Services.AddControllers(options =>
@@ -68,7 +71,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwaggerSetup();
 }
-
+//ServiceLocator.Instance = app.Services;
 app.UseStaticHttpContext();
 
 app.UseStaticFiles();//静态资源

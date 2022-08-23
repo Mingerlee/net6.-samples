@@ -12,6 +12,7 @@ namespace Focus.Service
     {
         public void Get()
         {
+            Console.WriteLine("Test:Get");
             //throw new NotImplementedException();
         }
     }

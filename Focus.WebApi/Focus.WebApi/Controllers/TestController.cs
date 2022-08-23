@@ -29,6 +29,8 @@ namespace Focus.WebApi.Controllers
         private readonly ISysUserService _userService;
         private readonly ILogger<TestController> _logger;
         private readonly IMapper _mapper;
+        [Autowired]
+        private ITest _test { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -36,8 +38,9 @@ namespace Focus.WebApi.Controllers
         /// <param name="userService"></param>
         /// <param name="logger"></param>
         /// <param name="mapper"></param>
-        public TestController(ILogger<TestController> logger, IOptions<TokenManagement> tokenManagement, ISysUserService userService, IMapper mapper)
+        public TestController(AutowiredService autowiredService,ILogger<TestController> logger, IOptions<TokenManagement> tokenManagement, ISysUserService userService, IMapper mapper)
         {
+            autowiredService.Autowired(this);//注入服务
             _tokenManagement = tokenManagement.Value;
             _userService = userService;
             _logger = logger;
@@ -229,6 +232,16 @@ namespace Focus.WebApi.Controllers
             };
             SysUser sysUser = _mapper.Map<SysUser>(regUser);
             return Ok(sysUser);
+        }
+        /// <summary>
+        /// 属性注入示例
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("W113"), AllowAnonymous]
+        public IActionResult TestGet()
+        {
+            _test.Get();
+            return Ok();
         }
 
         private void AddAuthorization()

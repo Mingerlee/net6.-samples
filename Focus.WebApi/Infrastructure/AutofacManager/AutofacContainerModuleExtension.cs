@@ -36,7 +36,9 @@ namespace Infrastructure.AutofacManager
 
             builder.RegisterAssemblyTypes(GetAssemblyList())
              .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
-             .AsSelf().AsImplementedInterfaces()
+             .AsSelf()
+             .PropertiesAutowired()
+             .AsImplementedInterfaces()
              .InstancePerLifetimeScope();
 
             builder.RegisterType<UserContext>().InstancePerLifetimeScope();
