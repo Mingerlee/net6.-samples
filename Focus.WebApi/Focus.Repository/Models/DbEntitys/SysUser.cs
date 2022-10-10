@@ -1,4 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
+using Infrastructure.Config;
 using Infrastructure.Models;
 
 namespace Focus.Repository.Models
@@ -43,6 +44,7 @@ namespace Focus.Repository.Models
         ///<summary>
         ///手机号码
         ///<summary>
+        [DBEntityVerification]
         public string? PhoneNumber { get; set; }
         ///<summary>
         ///用户住址

@@ -18,6 +18,7 @@ using Infrastructure.Utilities;
 using Newtonsoft.Json;
 using Focus.WebApi.Filters;
 using AutoMapper;
+using Focus.WebApi.Extensions;
 
 namespace Focus.WebApi.Controllers
 {
@@ -131,6 +132,10 @@ namespace Focus.WebApi.Controllers
         [HttpPost("W108"), AllowAnonymous]
         public IActionResult ValidateUser(SysUser sysUser)
         {
+            if (!sysUser.IsValid())
+            {
+                return Ok("该手机号码已注册！");
+            }
             return Ok("没有FluentValidation验证");
         }
 

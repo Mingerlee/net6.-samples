@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Infrastructure.Config
 {
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
+    public class DBEntityVerificationAttribute : Attribute
+    {
+    }
     public class TokenManagement
     {
         //[JsonProperty("secret")]
