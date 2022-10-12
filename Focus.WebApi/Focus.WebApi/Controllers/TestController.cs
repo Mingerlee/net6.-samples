@@ -249,6 +249,26 @@ namespace Focus.WebApi.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// 测试redis数据存储
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("W114"), AllowAnonymous]
+        public IActionResult TestRedisSet()
+        {
+            CacheContext.Cache.AddObject("KeyCode", "测试redis数据存储");
+            return Ok();
+        }
+        /// <summary>
+        /// 测试redis数据存储
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("W115"), AllowAnonymous]
+        public IActionResult TestRedisGet()
+        {
+            return Ok(CacheContext.Cache.Get("KeyCode"));
+        }
+
         private void AddAuthorization()
         {
             var userToken = new UserToken
