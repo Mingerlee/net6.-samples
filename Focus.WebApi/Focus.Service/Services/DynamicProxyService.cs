@@ -12,7 +12,13 @@ namespace Focus.Service.Services
         public void SayHello()
         {
             Console.WriteLine("Hello World！");
-            //throw new NotImplementedException();
+        }
+    }
+    public class DynamicProxyService2 : IDynamicProxyService2
+    {
+        public void SayHello(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }

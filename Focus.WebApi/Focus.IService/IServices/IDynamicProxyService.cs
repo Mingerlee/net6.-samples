@@ -10,8 +10,15 @@ using System.Threading.Tasks;
 namespace Focus.IService.IServices
 {
     [Intercept(typeof(TestDynamicProxy))]
+    [Intercept(typeof(TestDynamicProxy2))]
     public interface IDynamicProxyService: IAutofacDynamicProxy
     {
         void SayHello();
+
+    }
+    [Intercept(typeof(TestDynamicProxy2))]
+    public interface IDynamicProxyService2 : IAutofacDynamicProxy
+    {
+        void SayHello(string message);
     }
 }
