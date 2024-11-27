@@ -30,6 +30,11 @@ namespace Focus.WebApi.Configurations
                     Description = "Focus.WebApi API Swagger surface",
 
                 });
+                s.SwaggerDoc("ApiFox", new OpenApiInfo { 
+                    Title = "ApiFox文档", 
+                    Version = "v1", 
+                    Description = "ApiFox文档"
+                });
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, "Focus.WebApi.xml");
                // var xmlPath1 = Path.Combine(AppContext.BaseDirectory, "Samples.Service.APP.xml");
                 //s.IgnoreObsoleteActions();
@@ -78,6 +83,7 @@ namespace Focus.WebApi.Configurations
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Focus.WebApi Project");
+                c.SwaggerEndpoint("/swagger/ApiFox/swagger.json", "ApiFox文档 v1");
             });
         }
     }

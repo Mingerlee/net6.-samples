@@ -13,6 +13,7 @@ namespace Focus.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class SysUsersController : ControllerBase
     {
         private readonly ISysUserService _userService;

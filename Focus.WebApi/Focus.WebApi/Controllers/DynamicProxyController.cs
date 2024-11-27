@@ -6,6 +6,7 @@ namespace Focus.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class DynamicProxyController : ControllerBase
     {
         private readonly IDynamicProxyService _proxyService;

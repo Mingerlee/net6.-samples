@@ -24,6 +24,7 @@ namespace Focus.WebApi.Controllers
 {
     [Route("api/[controller]"), Authorize]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class TestController : ControllerBase
     {
         private readonly TokenManagement _tokenManagement;
@@ -39,7 +40,7 @@ namespace Focus.WebApi.Controllers
         /// <param name="userService"></param>
         /// <param name="logger"></param>
         /// <param name="mapper"></param>
-        public TestController(AutowiredService autowiredService,ILogger<TestController> logger, IOptions<TokenManagement> tokenManagement, ISysUserService userService, IMapper mapper)
+        public TestController(AutowiredService autowiredService, ILogger<TestController> logger, IOptions<TokenManagement> tokenManagement, ISysUserService userService, IMapper mapper)
         {
             autowiredService.Autowired(this);//注入服务
             _tokenManagement = tokenManagement.Value;
@@ -284,6 +285,8 @@ namespace Focus.WebApi.Controllers
                 Mobile = "15289890000",
                 MobileArea = "86",
                 Account = 1,
+                Platform = EnumPlatformType.PC,
+                Role = "Public"
             };
 
             string token = userToken.Serialization(_tokenManagement);
