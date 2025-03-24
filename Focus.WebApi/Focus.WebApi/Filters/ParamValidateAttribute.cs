@@ -29,7 +29,7 @@ namespace Focus.WebApi.Filters
                 if (!validatorService.Valid(argument.Value, _validateName, ref errors))
                 {
                     //Tips:验证不通过，输出验证信息
-                    ResultModel<List<ValidationFailureResult>> result = new ResultModel<List<ValidationFailureResult>>
+                    ResultModel result = new ResultModel
                     {
                         Status = 0,
                         Data = errors.ToValidationFailureResultList(argument.Value.GetType()),

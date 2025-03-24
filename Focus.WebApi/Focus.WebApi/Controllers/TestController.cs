@@ -24,7 +24,7 @@ namespace Focus.WebApi.Controllers
 {
     [Route("api/[controller]"), Authorize]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "v1")]
+    [ApiExplorerSettings(GroupName = "Focus")]
     public class TestController : ControllerBase
     {
         private readonly TokenManagement _tokenManagement;
@@ -53,10 +53,10 @@ namespace Focus.WebApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("W102"), AllowAnonymous]
-        public IActionResult Login()
+        public UserToken Login()
         {
-            AddAuthorization();
-            return Ok(new ResultModel<string>("Success"));
+            return AddAuthorization();
+            //return Ok(new ResultModel<string>("Success"));
         }
         ///// <summary>
         ///// 测试Async 获取数据库数据
@@ -171,7 +171,7 @@ namespace Focus.WebApi.Controllers
             string vCode = "";
             byte[] result = VerifyCodeHelper.VerifyCodeBytes(ref vCode);
             HttpContextHelper.Current.Session.SetString("VerifyCode", vCode);
-            return Ok(new ResultModel<byte[]>(result));
+            return Ok(new ResultModel(result));
         }
         /// <summary>
         /// 对比实体数据是否修改
@@ -269,8 +269,17 @@ namespace Focus.WebApi.Controllers
         {
             return Ok(CacheContext.Cache.Get("KeyCode"));
         }
-
-        private void AddAuthorization()
+        /// <summary>
+        ///  验证特性
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("W116"), AllowAnonymous]
+        public IActionResult TestValidation(RegisterSysUser sysUser)
+        {
+            return Ok();
+        }
+        
+        private UserToken AddAuthorization()
         {
             var userToken = new UserToken
             {
@@ -290,7 +299,10 @@ namespace Focus.WebApi.Controllers
             };
 
             string token = userToken.Serialization(_tokenManagement);
+
             HttpContext.Response.Headers.Add("Authorization", new StringValues(token));
+            return userToken;
         }
+
     }
 }

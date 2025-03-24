@@ -30,7 +30,7 @@ namespace Focus.Service
             throw new NotImplementedException();
         }
 
-        public async Task<ResultModel<string>> RegisterSysUsers(RegisterSysUser registerSysUser)
+        public async Task<ResultModel> RegisterSysUsers(RegisterSysUser registerSysUser)
         {
             using (DbHelper db = DbHelperFactory.Create())
             {
@@ -70,20 +70,20 @@ namespace Focus.Service
                     if (result)
                     {
                         db.CommitTransaction();
-                        return new ResultModel<string>("注册成功");
+                        return new ResultModel("注册成功");
                     }
                     else
                     {
                         _logger.LogInformation($"注册流程创建失败！");
                         db.RollbackTransaction();
-                        return new ResultModel<string>(0, ResponseCode.Register, "注册失败");
+                        return new ResultModel(0, ResponseCode.Register, "注册失败");
                     }
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, ex.Message);
                     db.RollbackTransaction();
-                    return new ResultModel<string>(0, ResponseCode.Register, "注册失败");
+                    return new ResultModel(0, ResponseCode.Register, "注册失败");
                 }
             }
         }

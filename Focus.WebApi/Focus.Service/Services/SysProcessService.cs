@@ -20,16 +20,16 @@ namespace Focus.Service.Services
         {
             _logger = logger;
         }
-        public async Task<ResultModel<ListPage<SysProcess>>> GetSysProcessList(SysProcessSc sc)
+        public async Task<ResultModel> GetSysProcessList(SysProcessSc sc)
         {
             using (DbHelper db=DbHelperFactory.Create())
             {
                 string sql = "SELECT * FROM SysProcess ";
                 ListPage<SysProcess> listPage =await db.QueryListAsync<SysProcess>(sql, sc);
-                return new ResultModel<ListPage<SysProcess>>(listPage);
+                return new ResultModel(listPage);
             }
         }
-        public async Task<ResultModel<string>> AddSysProcess(ReqSysProcess req)
+        public async Task<ResultModel> AddSysProcess(ReqSysProcess req)
         {
             using (DbHelper db = DbHelperFactory.Create())
             {
@@ -84,10 +84,10 @@ namespace Focus.Service.Services
                 {
                     db.RollbackTransaction();
                     _logger.LogError(ex, ex.Message);
-                    return new ResultModel<string>("添加失败！");
+                    return new ResultModel("添加失败！");
                 }
 
-                return new ResultModel<string>();
+                return new ResultModel();
             }
         }
     }

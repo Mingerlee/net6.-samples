@@ -11,7 +11,7 @@ namespace Focus.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "v1")]
+    [ApiExplorerSettings(GroupName = "Focus")]
     public class UploadFileController : ControllerBase
     {
         /// <summary>

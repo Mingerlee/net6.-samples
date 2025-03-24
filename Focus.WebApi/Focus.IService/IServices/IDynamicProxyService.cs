@@ -1,6 +1,7 @@
 ﻿using Autofac.Extras.DynamicProxy;
 using Focus.DynamicProxys.Interceptors;
 using Infrastructur.AutofacManager;
+using Infrastructure.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace Focus.IService.IServices
     [Intercept(typeof(TestDynamicProxy2))]
     public interface IDynamicProxyService2 : IAutofacDynamicProxy
     {
-        void SayHello(string message);
+        UserToken SayHello(string message);
+        void SayHello2(string message);
     }
 }

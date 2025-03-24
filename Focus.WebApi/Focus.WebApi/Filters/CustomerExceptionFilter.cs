@@ -32,7 +32,7 @@ namespace Focus.WebApi.Filters
                     _logger.LogError(BuilderMsg(context));
                     // 设置为true，表示异常已经被处理了
                     context.ExceptionHandled = true;
-                    context.Result = new OkObjectResult(new ResultModel<string>(0, ResponseCode.sys_exception, "网络请求超时,请稍后再试 !"));
+                    context.Result = new OkObjectResult(new ResultModel(0, ResponseCode.sys_exception, "网络请求超时,请稍后再试 !"));
                 }
             }
             return Task.CompletedTask;

@@ -8,7 +8,7 @@ namespace Infrastructure.Models
     /// 返回结果集（为了跟其他项目对接，统一为小写） 版本 : v.1.4
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ResultModel<T>
+    public class ResultModel
     {
         /// <summary>
         /// 是否成功
@@ -23,7 +23,7 @@ namespace Infrastructure.Models
         /// <summary>
         /// 返回结果
         /// </summary>
-        public T Data { get; set; }
+        public object Data { get; set; }
 
         /// <summary>
         /// 错误信息
@@ -38,7 +38,7 @@ namespace Infrastructure.Models
         /// 
         /// </summary>
         /// <param name="dt"></param>
-        public ResultModel(T t)
+        public ResultModel(object t)
         {
             Status = 1;
             ErrorCode = (int)ResponseCode.sys_success;

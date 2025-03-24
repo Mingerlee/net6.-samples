@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 
 namespace Focus.WebApi.Configurations
 {
@@ -23,7 +25,7 @@ namespace Focus.WebApi.Configurations
 
             services.AddSwaggerGen(s =>
             {
-                s.SwaggerDoc("v1", new OpenApiInfo
+                s.SwaggerDoc("Focus", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "Focus.WebApi Project",
@@ -35,12 +37,15 @@ namespace Focus.WebApi.Configurations
                     Version = "v1", 
                     Description = "ApiFox文档"
                 });
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, "Focus.WebApi.xml");
+                //var xmlPath = Path.Combine(AppContext.BaseDirectory, "Focus.WebApi.xml");
                // var xmlPath1 = Path.Combine(AppContext.BaseDirectory, "Samples.Service.APP.xml");
                 //s.IgnoreObsoleteActions();
                 s.DocInclusionPredicate((docName, description) => true);
-                s.IncludeXmlComments(xmlPath);
+                //s.IncludeXmlComments(xmlPath);
                 //s.IncludeXmlComments(xmlPath1);
+                var appXmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var appXmlPath = Path.Combine(AppContext.BaseDirectory, appXmlFile);
+                s.IncludeXmlComments(appXmlPath);
                 s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
@@ -68,7 +73,6 @@ namespace Focus.WebApi.Configurations
                         new List<string>()
                     }
                 });
-
             });
         }
         /// <summary>
@@ -82,7 +86,7 @@ namespace Focus.WebApi.Configurations
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Focus.WebApi Project");
+                c.SwaggerEndpoint("/swagger/Focus/swagger.json", "Focus.WebApi Project");
                 c.SwaggerEndpoint("/swagger/ApiFox/swagger.json", "ApiFox文档 v1");
             });
         }

@@ -6,7 +6,7 @@ namespace Focus.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "v1")]
+    [ApiExplorerSettings(GroupName = "Focus")]
     public class DynamicProxyController : ControllerBase
     {
         private readonly IDynamicProxyService _proxyService;
@@ -31,6 +31,12 @@ namespace Focus.WebApi.Controllers
         public IActionResult SayHello2()
         {
             _proxyService2.SayHello("I'm is OuyangMing!");
+            return Ok();
+        }
+        [HttpGet, Route("ProxyServiceSayHello2")]
+        public IActionResult ProxyService2SayHello2()
+        {
+            _proxyService2.SayHello2("I'm is OuyangMing!");
             return Ok();
         }
     }

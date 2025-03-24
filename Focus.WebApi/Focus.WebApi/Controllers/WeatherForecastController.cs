@@ -4,7 +4,7 @@ namespace Focus.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [ApiExplorerSettings(GroupName = "v1")]
+    [ApiExplorerSettings(GroupName = "Focus")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

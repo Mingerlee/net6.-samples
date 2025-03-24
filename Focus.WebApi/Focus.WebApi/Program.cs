@@ -48,6 +48,7 @@ builder.Services.AddControllers(options =>
     options.Filters.Add(typeof(CustomerActionFilter));
     options.Filters.Add(typeof(CustomerResultFilter));
     options.Filters.Add(typeof(CreateProcessActionFilter));
+    options.Filters.Add(typeof(MyActionFilterAttribute));
 });
 //Ìí¼ÓÈÕÖ¾
 builder.Services.AddLogging(m => { m.AddNLog("config/NLog.config"); });

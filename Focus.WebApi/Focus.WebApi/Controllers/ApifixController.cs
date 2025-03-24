@@ -17,7 +17,7 @@ namespace Focus.WebApi.Controllers
         [HttpPost, Route("Login"), AllowAnonymous]
         public IActionResult Login()
         {
-            return Ok(new ResultModel<string>("Success"));
+            return Ok(new ResultModel("Success"));
         }
     }
 }

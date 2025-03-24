@@ -10,7 +10,7 @@ namespace Focus.IService.IServices
 {
     public interface ISysProcessService
     {
-        Task<ResultModel<ListPage<SysProcess>>> GetSysProcessList(SysProcessSc sc);
-        Task<ResultModel<string>> AddSysProcess(ReqSysProcess req);
+        Task<ResultModel> GetSysProcessList(SysProcessSc sc);
+        Task<ResultModel> AddSysProcess(ReqSysProcess req);
     }
 }
