@@ -26,6 +26,10 @@ namespace Focus.Repository.Models
         [Description("用户邮箱")]
         [IsEmail(ErrorMessage ="邮箱格式不正确")]
         public string? Email { get; set; }
+        [BetweenValue(ErrorMessage = "年龄必须在0~150之间", IsEqualMinValue = true,IsEqualMaxValue =true, MinValue = 0, MaxValue = 150)]
+        public int Age { get; set; }
+        [GreaterThanMinValue(MinValue =0,ErrorMessage ="金额必须大于0")]
+        public decimal PayMoney { get; set; }
     }
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class IsTelephone : ValidationAttribute
@@ -108,5 +112,158 @@ namespace Focus.Repository.Models
             return ValidationResult.Success;
         }
     }
+    /// <summary>
+    ///     <para>M.Simple.Expand扩展</para>
+    ///     <para>必须大于最小值</para>
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class GreaterThanMinValue : ValidationAttribute
+    {
+        /// <summary>
+        ///     最小值
+        /// </summary>
+        public int MinValue { get; set; }
+        /// <summary>
+        ///     是否可以等于最小值
+        /// </summary>
+        public bool IsEqualMinValue { get; set; } = false;
+        /// <summary>
+        ///     验证
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        {
+            //为空返回提示
+            if (value == null) return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+            try
+            {
+                _ = int.TryParse(value.ToString() ?? "", out int result);
+                if (IsEqualMinValue && result < MinValue)
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                }
+                if (!IsEqualMinValue && result <= MinValue)
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                }
 
+                return ValidationResult.Success;
+            }
+            catch
+            {
+                return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+            }
+        }
+    }
+    /// <summary>
+    ///     <para>M.Simple.Expand扩展</para>
+    ///     <para>必须小于最大值</para>
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class LessThanMaxValue : ValidationAttribute
+    {
+        /// <summary>
+        ///     最大值
+        /// </summary>
+        public int MaxValue { get; set; }
+        /// <summary>
+        ///     是否可以等于最大值
+        /// </summary>
+        public bool IsEqualMaxValue { get; set; } = false;
+        /// <summary>
+        ///     验证
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        {
+            //为空返回提示
+            if (value == null) return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+            try
+            {
+                _ = int.TryParse(value.ToString() ?? "", out int result);
+
+                if (IsEqualMaxValue && result > MaxValue)
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                }
+
+                if (!IsEqualMaxValue && result >= MaxValue)
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                }
+
+                return ValidationResult.Success;
+            }
+            catch
+            {
+                return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+            }
+        }
+    }
+    /// <summary>
+    ///     <para>M.Simple.Expand扩展</para>
+    ///     <para>两者之间</para>
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class BetweenValue : ValidationAttribute
+    {
+        /// <summary>
+        ///     最小值
+        /// </summary>
+        public int MinValue { get; set; }
+        /// <summary>
+        ///     最大值
+        /// </summary>
+        public int MaxValue { get; set; }
+        /// <summary>
+        ///     是否可以等于最小值
+        /// </summary>
+        public bool IsEqualMinValue { get; set; } = false;
+        /// <summary>
+        ///     是否可以等于最大值
+        /// </summary>
+        public bool IsEqualMaxValue { get; set; } = false;
+        /// <summary>
+        ///     验证
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        {
+            //为空返回提示
+            if (value == null) return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+            try
+            {
+                _ = int.TryParse(value.ToString() ?? "", out int result);
+
+                if (IsEqualMinValue && !IsEqualMaxValue && !(result >= MinValue && result < MaxValue))
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                }
+                if (!IsEqualMinValue && IsEqualMaxValue && !(result > MinValue && result <= MaxValue))
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                }
+                if (IsEqualMaxValue && IsEqualMinValue && !(result >= MinValue && result <= MaxValue))
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                }
+                if (!IsEqualMaxValue && !IsEqualMinValue && !(result > MinValue && result < MaxValue))
+                {
+                    return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+                }
+
+                return ValidationResult.Success;
+            }
+            catch
+            {
+                return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
+            }
+        }
+    }
 }
