@@ -28,7 +28,11 @@ namespace Focus.Repository.Models
         public string? Email { get; set; }
         [BetweenValue(ErrorMessage = "年龄必须在0~150之间", IsEqualMinValue = true,IsEqualMaxValue =true, MinValue = 0, MaxValue = 150)]
         public int Age { get; set; }
-        [GreaterThanMinValue(MinValue =0,ErrorMessage ="金额必须大于0")]
+        public IEnumerable<RegisterSysUserDetails> Details { get; set; }
+    }
+    public class RegisterSysUserDetails
+    {
+        [GreaterThanMinValue(MinValue = 0, ErrorMessage = "金额必须大于0")]
         public decimal PayMoney { get; set; }
     }
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
@@ -122,7 +126,7 @@ namespace Focus.Repository.Models
         /// <summary>
         ///     最小值
         /// </summary>
-        public int MinValue { get; set; }
+        public int MinValue { get; set; } = 0;
         /// <summary>
         ///     是否可以等于最小值
         /// </summary>
@@ -139,7 +143,7 @@ namespace Focus.Repository.Models
             if (value == null) return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
             try
             {
-                _ = int.TryParse(value.ToString() ?? "", out int result);
+                _ = decimal.TryParse(value.ToString() ?? "", out decimal result);
                 if (IsEqualMinValue && result < MinValue)
                 {
                     return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
