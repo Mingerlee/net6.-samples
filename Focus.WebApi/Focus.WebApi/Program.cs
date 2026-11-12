@@ -5,7 +5,6 @@ using Infrastructure.Utilities;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authorization;
 using Focus.WebApi.Filters;
-using NLog.Extensions.Logging;
 using Focus.WebApi.Extensions;
 using Focus.WebApi;
 
@@ -50,8 +49,6 @@ builder.Services.AddControllers(options =>
     options.Filters.Add(typeof(CreateProcessActionFilter));
     options.Filters.Add(typeof(MyActionFilterAttribute));
 });
-//添加日志
-builder.Services.AddLogging(m => { m.AddNLog("config/NLog.config"); });
 
 //添加跨域
 builder.Services.AddCors(options =>
