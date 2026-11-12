@@ -17,7 +17,6 @@ using Infrastructure.Enums;
 using Infrastructure.Utilities;
 using Newtonsoft.Json;
 using Focus.WebApi.Filters;
-using AutoMapper;
 using Focus.WebApi.Extensions;
 
 namespace Focus.WebApi.Controllers
@@ -30,7 +29,6 @@ namespace Focus.WebApi.Controllers
         private readonly TokenManagement _tokenManagement;
         private readonly ISysUserService _userService;
         private readonly ILogger<TestController> _logger;
-        private readonly IMapper _mapper;
         [Autowired]
         private ITest _test { get; set; }
         /// <summary>
@@ -39,14 +37,12 @@ namespace Focus.WebApi.Controllers
         /// <param name="tokenManagement"></param>
         /// <param name="userService"></param>
         /// <param name="logger"></param>
-        /// <param name="mapper"></param>
-        public TestController(AutowiredService autowiredService, ILogger<TestController> logger, IOptions<TokenManagement> tokenManagement, ISysUserService userService, IMapper mapper)
+        public TestController(AutowiredService autowiredService, ILogger<TestController> logger, IOptions<TokenManagement> tokenManagement, ISysUserService userService)
         {
             autowiredService.Autowired(this);//注入服务
             _tokenManagement = tokenManagement.Value;
             _userService = userService;
             _logger = logger;
-            _mapper = mapper;
         }
         /// <summary>
         /// 登录授权(默认角色为：Administrator)
@@ -207,11 +203,11 @@ namespace Focus.WebApi.Controllers
             return Ok();
         }
         /// <summary>
-        /// AutoMapper 示例 DB Entity To ViewModel
+        /// Mapping 示例 DB Entity To ViewModel
         /// </summary>
         /// <returns></returns>
         [HttpGet("W111"), AllowAnonymous]
-        public IActionResult TestAutoMapper()
+        public IActionResult TestEntityToViewModel()
         {
             SysUser sysUser = new SysUser
             {
@@ -219,16 +215,21 @@ namespace Focus.WebApi.Controllers
                 PhoneNumber = "15200000000",
                 Email = "1234@qq.com"
             };
-            RegisterSysUser RegUser = _mapper.Map<RegisterSysUser>(sysUser);
+            RegisterSysUser RegUser = new RegisterSysUser
+            {
+                UserName = sysUser.UserName,
+                PhoneNumber = sysUser.PhoneNumber,
+                Email = sysUser.Email
+            };
             return Ok(RegUser);
         }
 
         /// <summary>
-        /// AutoMapper 示例 ViewModel To DB Entity
+        /// Mapping 示例 ViewModel To DB Entity
         /// </summary>
         /// <returns></returns>
         [HttpGet("W112"), AllowAnonymous]
-        public IActionResult TestAutoMapper2()
+        public IActionResult TestViewModelToEntity()
         {
             RegisterSysUser regUser = new RegisterSysUser
             {
@@ -236,7 +237,12 @@ namespace Focus.WebApi.Controllers
                 PhoneNumber = "15200000001",
                 Email = "123456@qq.com"
             };
-            SysUser sysUser = _mapper.Map<SysUser>(regUser);
+            SysUser sysUser = new SysUser
+            {
+                UserName = regUser.UserName,
+                PhoneNumber = regUser.PhoneNumber,
+                Email = regUser.Email
+            };
             return Ok(sysUser);
         }
         /// <summary>

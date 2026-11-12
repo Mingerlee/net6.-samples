@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Focus.WebApi.Filters;
 using Focus.WebApi.Extensions;
 using Focus.WebApi;
+using M.Simple.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 //var Configuration = new ConfigurationBuilder().Add(new MemoryConfigurationSource()).Build();
@@ -20,7 +21,6 @@ builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerSetup();//×¢²áSwaggerÅäÖÃ
 builder.Services.AddJwtAuthSetup(builder.Configuration);//×¢²áJWTÅäÖÃ
-builder.Services.AddAutoMapperSetup();//×¢²áAutoMapper
 //builder.Services.AddMiniProfiler();
 //×¢²ásession
 builder.Services.AddDistributedMemoryCache();//ÆôÓÃÄÚ´æ»º´æ
@@ -49,7 +49,13 @@ builder.Services.AddControllers(options =>
     options.Filters.Add(typeof(CreateProcessActionFilter));
     options.Filters.Add(typeof(MyActionFilterAttribute));
 });
-
+builder.Services.AddSimpleLogging(options =>
+{
+    options.ApplicationName = "BAMS.Api";
+    options.DatabasePath = "App_Data/logs.db";
+    options.RetentionDays = 15;
+    options.MinimumLevel = LogLevel.Information;
+});
 //Ìí¼Ó¿çÓò
 builder.Services.AddCors(options =>
 {
@@ -81,7 +87,15 @@ app.UseHttpsRedirection();
 app.UseAuthentication();//JWT ÊÚÈ¨ÑéÖ¤
 
 app.UseAuthorization();
-
+var dashboard = app.MapSimpleLogDashboard("/logs");
+if (app.Environment.IsDevelopment())
+{
+    dashboard.AllowAnonymous();
+}
+else
+{
+    dashboard.RequireAuthorization();
+}
 app.MapControllers();
 //app.UseMiniProfiler();
 //app.MapPost("/todo", [AllowAnonymous] (string Name) => $"Hello {Name}");
