@@ -54,7 +54,7 @@ builder.Services.AddSimpleLogging(options =>
     options.ApplicationName = "BAMS.Api";
     options.DatabasePath = "App_Data/logs.db";
     options.RetentionDays = 15;
-    options.MinimumLevel = LogLevel.Information;
+    options.MinimumLevel = LogLevel.Error;
 });
 //添加跨域
 builder.Services.AddCors(options =>
@@ -96,6 +96,12 @@ else
 {
     dashboard.RequireAuthorization();
 }
+// 放在宿主异常处理中间件之后、接口执行之前
+app.UseSimpleLoggingRequestContext(options =>
+{
+    options.IncludeInErrorLogs = false;
+});
+
 app.MapControllers();
 //app.UseMiniProfiler();
 //app.MapPost("/todo", [AllowAnonymous] (string Name) => $"Hello {Name}");

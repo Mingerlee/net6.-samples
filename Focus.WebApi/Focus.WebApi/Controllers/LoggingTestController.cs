@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using M.Simple.Logging;
 
 namespace Focus.WebApi.Controllers
 {
@@ -23,8 +24,7 @@ namespace Focus.WebApi.Controllers
         [HttpPost, Route("W1020"), AllowAnonymous]
         public bool Login()
         {
-            
-            _logger.LogError("测试错误日志！");
+            _logger.LogError(true,"测试错误日志！");
             return true;
             //return Ok(new ResultModel<string>("Success"));
         }

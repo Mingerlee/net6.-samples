@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
+using Microsoft.Extensions.Options;
+using M.Simple.Logging;
 
 namespace Focus.WebApi.Controllers
 {
@@ -25,11 +27,11 @@ namespace Focus.WebApi.Controllers
         /// <param name="userService"></param>
         /// <param name="logger"></param>
         /// <param name="tokenManagement"></param>
-        public SysUsersController(ILogger<SysUsersController> logger, ISysUserService userService, TokenManagement tokenManagement)
+        public SysUsersController(ILogger<SysUsersController> logger, ISysUserService userService, IOptions<TokenManagement> tokenManagement)
         {
             _userService = userService;
             _logger = logger;
-            _tokenManagement = tokenManagement;
+            _tokenManagement = tokenManagement.Value;
         }
         /// <summary>
         /// 注册
@@ -39,6 +41,7 @@ namespace Focus.WebApi.Controllers
         [HttpPost("Register01"), AllowAnonymous, ParamValidate(typeof(RegisterSysUserValidation))]
         public async Task<IActionResult> RegisterSysUsers(RegisterSysUser registerSysUser)
         {
+            _logger.LogError(true, "测试错误日志！");
             return Ok(await _userService.RegisterSysUsers(registerSysUser));
         }
         /// <summary>

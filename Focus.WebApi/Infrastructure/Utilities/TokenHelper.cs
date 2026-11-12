@@ -59,7 +59,7 @@ namespace Infrastructure.Utilities
             var claims = new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Jti, userToken.UID.ToString()),
-                    new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToUniversalTime().ToString(),ClaimValueTypes.Integer64),
+                    new Claim(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(System.Globalization.CultureInfo.InvariantCulture), ClaimValueTypes.Integer64),
                     new Claim(JwtRegisteredClaimNames.UniqueName, userToken.UID.ToString()),
                     new Claim("usercode",userToken.UserCode?? ""),
                     new Claim("name",userToken.Name?? ""),
