@@ -24,7 +24,7 @@ namespace Focus.WebApi.Controllers
         [HttpPost, Route("W1020"), AllowAnonymous]
         public bool Login()
         {
-            _logger.LogError(true,"测试错误日志！");
+            _logger.LogError(true,"测试错误日志！1");
             return true;
             //return Ok(new ResultModel<string>("Success"));
         }
